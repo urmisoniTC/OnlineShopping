@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="card mr-auto ml-auto mt-4 text-center login_bg" style="width:50%;">
+    <h2 class="mt-3">Sign up</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      
+      <div class="row mr-1 ml-1">
+        <div class="col-md-6">
+          <%= f.text_field :first_name, placeholder:"First Name", class:"form-control" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.text_field :last_name, placeholder:"Last Name", class:"form-control" %>
+        </div>
+      </div>
+      
+      <div class="row mt-4 mr-1 ml-1">
+        <div class="col-md-6">
+          <%= f.text_field :contact, placeholder:"Contact", class:"form-control" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.email_field :email, autocomplete: "email", placeholder:"Email", class:"form-control" %>
+        </div>
+      </div>
+
+      <div class="row mt-4 mr-1 ml-1">
+        <div class="col-md-6">
+          <%= f.text_field :state_id, placeholder:"State", class:"form-control" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.text_field :city_id, placeholder:"City", class:"form-control" %>
+        </div>
+      </div>
+
+      <div class="row mt-4 mr-1 ml-1">
+        <div class="col-md-6">
+          <%= f.text_field :area_id, placeholder:"Area", class:"form-control" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.text_field :pincode, placeholder:"Pincode", class:"form-control" %>
+        </div>
+      </div>
+
+      <div class="row mt-4 mr-1 ml-1">
+        <div class="col-md-12">
+          <%= f.text_area :address, placeholder:"Address", class:"form-control" %>
+        </div>
+      </div>
+
+      <div class="row mt-4 mr-1 ml-1">
+        <div class="col-md-6">
+          <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password", class:"form-control" %>
+        </div>
+        <div class="col-md-6">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm Password", class:"form-control" %>
+        </div>
+      </div>
+
+      <div class="actions mt-3">
+        <%= f.submit "Sign up", class:"btn btn-primary" %>
+      </div>
+    <% end %>
+    
+    <div class="mt-2">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
